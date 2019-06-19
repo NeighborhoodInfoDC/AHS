@@ -70,11 +70,11 @@ proc sort data=temp1 out=temp2 nodupkey ;
 run;
 
 *Step 3:  Build the Format Catalog;
-proc format LIBRARY=work
+proc format LIBRARY=AHS
      cntlin = temp2;
 run;
 
-proc catalog catalog=work.formats;
+proc catalog catalog=AHS.formats;
   contents;
 quit;
 
