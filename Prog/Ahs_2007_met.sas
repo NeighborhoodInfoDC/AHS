@@ -18,6 +18,8 @@
 ** Define libraries **;
 %DCData_lib( AHS )
 
+%let revisions = New file.;
+
 ** Library reference for HUD-provided data sets **;
 libname ahs2007 "L:\Libraries\AHS\Raw\2007-met";
 
@@ -75,8 +77,6 @@ proc sql noprint;
 
 quit;
 
-%put _user_;
-
 run;
 
 ** Housing unit data **;
@@ -113,7 +113,7 @@ quit;
   label="American Housing Survey, 2007, metropolitan area, housing units",
   sortby=smsa control,
   /** Metadata parameters **/
-  revisions=%str(New file.),
+  revisions=%str(&revisions),
   /** File info parameters **/
   printobs=0,
   freqvars=smsa
@@ -149,7 +149,7 @@ quit;
   label="American Housing Survey, 2007, metropolitan area, persons",
   sortby=smsa control person,
   /** Metadata parameters **/
-  revisions=%str(New file.),
+  revisions=%str(&revisions),
   /** File info parameters **/
   printobs=0,
   freqvars=smsa
@@ -176,7 +176,7 @@ quit;
   label="American Housing Survey, 2007, metropolitan area, recent movers",
   sortby=smsa control rmov,
   /** Metadata parameters **/
-  revisions=%str(New file.),
+  revisions=%str(&revisions),
   /** File info parameters **/
   printobs=0,
   freqvars=smsa
@@ -203,7 +203,7 @@ quit;
   label="American Housing Survey, 2007, metropolitan area, home improvements",
   sortby=smsa control,
   /** Metadata parameters **/
-  revisions=%str(New file.),
+  revisions=%str(&revisions),
   /** File info parameters **/
   printobs=0,
   freqvars=smsa
